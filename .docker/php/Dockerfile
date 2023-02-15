@@ -1,11 +1,10 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.4.9
 
 RUN apk add --update \
     zip \
     unzip \
     curl \
-    nodejs \
-    yarn
+    nodejs 
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 

@@ -1,23 +1,43 @@
-# api-cocoloc
-ma lubule
+# api-cocolocV2
 
+API du porjet cocoloc 
 
-renter dans l'image :
+## Project Setup
 
-- docker exec -it mydockersymfony5_php_1 sh
+Installer les dependences 
 
-puis faire un :
+```sh
+composer install
+```
 
-composer i (ou install)
+Lancer le docker 
+
+```sh
+docker compose up --build
+```
+
+Générer les clés publiques et priver de JWT
+
+```sh
+symfony console lexik:jwt:generate-keypair
+```
+
+### Compile for Development
+
+```sh
+symfony serve
+```
 
 run les migration avec:
 
-- php bin/console do:mi:mi
+```sh
+php bin/console do:mi:mi
+```
 
-run les fixtures :
+run les fixtures 
 
+```sh
 php bin/console doctrine:fixtures:load
+```
 
-Générer les clés publiques et priver de jwt 
-
-symfony console lexik:jwt:generate-keypair
+Pour voir la page API PLATFORM : https://127.0.0.1:8000/api
